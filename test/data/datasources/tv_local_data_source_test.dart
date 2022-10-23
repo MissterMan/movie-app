@@ -104,12 +104,12 @@ void main() {
   group('cache on air tv series', () {
     test('should call database helper to save data', () async {
       // arrange
-      when(mockDatabaseHelper.clearCache('now playing'))
+      when(mockDatabaseHelper.clearTvCache('now playing'))
           .thenAnswer((_) async => 1);
       // act
       await dataSource.cacheOnAirTvSeries([testTvSeriesCache]);
       // assert
-      verify(mockDatabaseHelper.clearCache('now playing'));
+      verify(mockDatabaseHelper.clearTvCache('now playing'));
       verify(mockDatabaseHelper
           .insertCacheTransactionTvSeries([testTvSeriesCache], 'now playing'));
     });

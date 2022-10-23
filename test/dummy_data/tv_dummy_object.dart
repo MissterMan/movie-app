@@ -15,7 +15,6 @@ final testTvSeriesTable = TvSeriesTable(
 
 final testTvSeries = TvSeries(
   backdropPath: 'backdropPath.jpg',
-  firstAirDate: DateTime.parse('2002-05-01'),
   genreIds: [1],
   id: 1,
   name: 'name',

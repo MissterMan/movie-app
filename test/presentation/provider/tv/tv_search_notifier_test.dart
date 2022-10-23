@@ -30,7 +30,6 @@ void main() {
 
   final tTvModel = TvSeries(
       backdropPath: '/rkB4LyZHo1NHXFEDHl9vSD9r1lI.jpg',
-      firstAirDate: DateTime.parse('2021-11-06'),
       genreIds: [16, 10765, 10759, 18],
       id: 94605,
       name: 'Arcane',

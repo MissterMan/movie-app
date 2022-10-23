@@ -177,12 +177,12 @@ void main() {
     final tSearchResult = TvSeriesResponse.fromJson(
             jsonDecode(readJson('dummy_data/search_LOTR_tv_series.json')))
         .tvList;
-    final tSearchQuery = 'Lord%20of%20The%20Rings';
+    final tSearchQuery = 'Lord';
 
     test('should return list of Tv Series when response code 200', () async {
       // arrange
-      when(mockHttpClient
-              .get(Uri.parse('$BASE_URL/search/tv?$API_KEY&$tSearchQuery')))
+      when(mockHttpClient.get(
+              Uri.parse('$BASE_URL/search/tv?$API_KEY&query=$tSearchQuery')))
           .thenAnswer((_) async => http.Response(
               readJson('dummy_data/search_LOTR_tv_series.json'), 200));
       // act
@@ -194,8 +194,8 @@ void main() {
     test('should return ServerException when response code is 404 or others',
         () async {
       // arrange
-      when(mockHttpClient
-              .get(Uri.parse('$BASE_URL/search/tv?$API_KEY&$tSearchQuery')))
+      when(mockHttpClient.get(
+              Uri.parse('$BASE_URL/search/tv?$API_KEY&query=$tSearchQuery')))
           .thenAnswer((_) async => http.Response('Not Found', 404));
       // act
       final call = dataSource.searchTvSeries(tSearchQuery);

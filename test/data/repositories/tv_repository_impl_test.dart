@@ -37,7 +37,6 @@ void main() {
 
   final tTvSeriesModel = TvSeriesModel(
     backdropPath: "/1rO4xoCo4Z5WubK0OwdVll3DPYo.jpg",
-    firstAirDate: DateTime.parse("2022-09-01"),
     genreIds: [
       10765,
       10759,
@@ -57,7 +56,6 @@ void main() {
 
   final tTvSeries = TvSeries(
     backdropPath: "/1rO4xoCo4Z5WubK0OwdVll3DPYo.jpg",
-    firstAirDate: DateTime.parse("2022-09-01"),
     genreIds: [
       10765,
       10759,

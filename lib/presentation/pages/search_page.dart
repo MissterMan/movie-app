@@ -14,7 +14,7 @@ class SearchPage extends StatefulWidget {
 }
 
 class _SearchPageState extends State<SearchPage> {
-  String _indexValue = '';
+  String _indexValue = 'Movie';
   List<String> _pageList = ['Movie', 'Tv Series'];
 
   @override
