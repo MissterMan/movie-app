@@ -28,7 +28,6 @@ class TvSeriesDetailResponse extends Equatable {
     required this.inProduction,
     required this.languages,
     required this.lastAirDate,
-    required this.lastEpisodeToAir,
     required this.name,
     required this.numberOfEpisodes,
     required this.numberOfSeasons,
@@ -38,7 +37,6 @@ class TvSeriesDetailResponse extends Equatable {
     required this.overview,
     required this.popularity,
     required this.posterPath,
-    required this.seasons,
     required this.status,
     required this.tagline,
     required this.type,
@@ -56,7 +54,6 @@ class TvSeriesDetailResponse extends Equatable {
   final bool inProduction;
   final List<String> languages;
   final DateTime lastAirDate;
-  final TEpisodeToAir lastEpisodeToAir;
   final String name;
   final int numberOfEpisodes;
   final int numberOfSeasons;
@@ -66,7 +63,6 @@ class TvSeriesDetailResponse extends Equatable {
   final String overview;
   final double popularity;
   final String? posterPath;
-  final List<Season> seasons;
   final String status;
   final String tagline;
   final String type;
@@ -86,7 +82,6 @@ class TvSeriesDetailResponse extends Equatable {
         inProduction: json["in_production"],
         languages: List<String>.from(json["languages"].map((x) => x)),
         lastAirDate: DateTime.parse(json["last_air_date"]),
-        lastEpisodeToAir: TEpisodeToAir.fromJson(json["last_episode_to_air"]),
         name: json["name"],
         numberOfEpisodes: json["number_of_episodes"],
         numberOfSeasons: json["number_of_seasons"],
@@ -96,8 +91,6 @@ class TvSeriesDetailResponse extends Equatable {
         overview: json["overview"],
         popularity: json["popularity"].toDouble(),
         posterPath: json["poster_path"],
-        seasons:
-            List<Season>.from(json["seasons"].map((x) => Season.fromJson(x))),
         status: json["status"],
         tagline: json["tagline"],
         type: json["type"],
@@ -118,7 +111,6 @@ class TvSeriesDetailResponse extends Equatable {
         "languages": List<dynamic>.from(languages.map((x) => x)),
         "last_air_date":
             "${lastAirDate.year.toString().padLeft(4, '0')}-${lastAirDate.month.toString().padLeft(2, '0')}-${lastAirDate.day.toString().padLeft(2, '0')}",
-        "last_episode_to_air": lastEpisodeToAir.toJson(),
         "name": name,
         "number_of_episodes": numberOfEpisodes,
         "number_of_seasons": numberOfSeasons,
@@ -128,7 +120,6 @@ class TvSeriesDetailResponse extends Equatable {
         "overview": overview,
         "popularity": popularity,
         "poster_path": posterPath,
-        "seasons": List<dynamic>.from(seasons.map((x) => x.toJson())),
         "status": status,
         "tagline": tagline,
         "type": type,
@@ -148,7 +139,6 @@ class TvSeriesDetailResponse extends Equatable {
         inProduction: this.inProduction,
         languages: this.languages,
         lastAirDate: this.lastAirDate,
-        lastEpisodeToAir: this.lastEpisodeToAir,
         name: this.name,
         numberOfEpisodes: this.numberOfEpisodes,
         numberOfSeasons: this.numberOfSeasons,
@@ -158,7 +148,6 @@ class TvSeriesDetailResponse extends Equatable {
         overview: this.overview,
         popularity: this.popularity,
         posterPath: this.posterPath,
-        seasons: this.seasons,
         status: this.status,
         tagline: this.tagline,
         type: this.type,
@@ -178,7 +167,6 @@ class TvSeriesDetailResponse extends Equatable {
         inProduction,
         languages,
         lastAirDate,
-        lastEpisodeToAir,
         name,
         numberOfEpisodes,
         numberOfSeasons,
@@ -188,7 +176,6 @@ class TvSeriesDetailResponse extends Equatable {
         overview,
         popularity,
         posterPath,
-        seasons,
         status,
         tagline,
         type,

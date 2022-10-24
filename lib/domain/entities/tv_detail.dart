@@ -1,9 +1,4 @@
-import 'package:ditonton/data/models/tv_detail_model.dart';
 import 'package:equatable/equatable.dart';
-
-import '../../data/models/genre_model.dart';
-import '../../data/models/tv_episodes_models.dart';
-import '../../data/models/tv_season_model.dart';
 import 'genre.dart';
 
 class TvSeriesDetail extends Equatable {
@@ -18,7 +13,6 @@ class TvSeriesDetail extends Equatable {
     required this.inProduction,
     required this.languages,
     required this.lastAirDate,
-    required this.lastEpisodeToAir,
     required this.name,
     required this.numberOfEpisodes,
     required this.numberOfSeasons,
@@ -28,7 +22,6 @@ class TvSeriesDetail extends Equatable {
     required this.overview,
     required this.popularity,
     required this.posterPath,
-    required this.seasons,
     required this.status,
     required this.tagline,
     required this.type,
@@ -46,7 +39,6 @@ class TvSeriesDetail extends Equatable {
   final bool inProduction;
   final List<String> languages;
   final DateTime lastAirDate;
-  final TEpisodeToAir lastEpisodeToAir;
   final String name;
   final int numberOfEpisodes;
   final int numberOfSeasons;
@@ -56,7 +48,6 @@ class TvSeriesDetail extends Equatable {
   final String overview;
   final double popularity;
   final String? posterPath;
-  final List<Season> seasons;
   final String status;
   final String tagline;
   final String type;
@@ -75,7 +66,6 @@ class TvSeriesDetail extends Equatable {
         inProduction,
         languages,
         lastAirDate,
-        lastEpisodeToAir,
         name,
         numberOfEpisodes,
         numberOfSeasons,
@@ -85,7 +75,6 @@ class TvSeriesDetail extends Equatable {
         overview,
         popularity,
         posterPath,
-        seasons,
         status,
         tagline,
         type,
