@@ -106,7 +106,9 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
                         } else if (state is NowPlayingMoviesHasData) {
                           return MovieList(state.result);
                         } else if (state is NowPlayingMoviesError) {
-                          return Text(state.message);
+                          return Center(
+                            child: Text(state.message),
+                          );
                         } else {
                           return Container();
                         }
@@ -126,15 +128,11 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
                         } else if (state is PopularMoviesHasData) {
                           return MovieList(state.result);
                         } else if (state is PopularMoviesError) {
-                          return Expanded(
-                            child: Center(
-                              child: Text(state.message),
-                            ),
+                          return Center(
+                            child: Text(state.message),
                           );
                         } else {
-                          return Expanded(
-                            child: Container(),
-                          );
+                          return Container();
                         }
                       },
                     ),
@@ -152,15 +150,11 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
                         } else if (state is TopRatedMoviesHasData) {
                           return MovieList(state.result);
                         } else if (state is TopRatedMoviesError) {
-                          return Expanded(
-                            child: Center(
-                              child: Text(state.message),
-                            ),
+                          return Center(
+                            child: Text(state.message),
                           );
                         } else {
-                          return Expanded(
-                            child: Container(),
-                          );
+                          return Container();
                         }
                       },
                     ),

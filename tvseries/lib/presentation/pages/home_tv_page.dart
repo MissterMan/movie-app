@@ -56,7 +56,9 @@ class _HomeTvPageState extends State<HomeTvPage> {
               } else if (state is TvOnAirHasData) {
                 return TvList(state.result);
               } else if (state is TvOnAirError) {
-                return Text(state.message);
+                return Center(
+                  child: Text(state.message),
+                );
               } else {
                 return Text('Failed to load');
               }
@@ -75,10 +77,8 @@ class _HomeTvPageState extends State<HomeTvPage> {
                 } else if (state is TvPopularHasData) {
                   return TvList(state.result);
                 } else if (state is TvPopularError) {
-                  return Expanded(
-                    child: Center(
-                      child: Text(state.message),
-                    ),
+                  return Center(
+                    child: Text(state.message),
                   );
                 } else {
                   return Text('Failed to load');
@@ -99,10 +99,8 @@ class _HomeTvPageState extends State<HomeTvPage> {
                 } else if (state is TvTopRatedHasData) {
                   return TvList(state.result);
                 } else if (state is TvTopRatedError) {
-                  return Expanded(
-                    child: Center(
-                      child: Text(state.message),
-                    ),
+                  return Center(
+                    child: Text(state.message),
                   );
                 } else {
                   return Text('Failed to load');
