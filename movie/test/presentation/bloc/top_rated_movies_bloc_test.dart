@@ -23,7 +23,7 @@ void main() {
   });
 
   test('Initial state should be empty', () {
-    expect(topRatedMoviesBloc.state, PopularMoviesEmpty());
+    expect(topRatedMoviesBloc.state, TopRatedMoviesEmpty());
   });
 
   blocTest<TopRatedMoviesBloc, TopRatedMoviesState>(
@@ -37,8 +37,8 @@ void main() {
       bloc.add(FetchTopRatedMovies());
     },
     expect: () => [
-      PopularMoviesLoading(),
-      PopularMoviesHasData(testMovieList),
+      TopRatedMoviesLoading(),
+      TopRatedMoviesHasData(testMovieList),
     ],
     verify: (bloc) => [
       verify(
@@ -48,7 +48,7 @@ void main() {
   );
 
   blocTest<TopRatedMoviesBloc, TopRatedMoviesState>(
-    'Should emit [Loading, Error] when get top rated tv series data is unsuccessful',
+    'Should emit [Loading, Error] when get top rated data is unsuccessful',
     build: () {
       when(mockGetTopRatedMovies.execute()).thenAnswer((_) async => Left(
             ServerFailure('Server Failure'),
@@ -59,8 +59,8 @@ void main() {
       bloc.add(FetchTopRatedMovies());
     },
     expect: () => [
-      PopularMoviesLoading(),
-      const PopularMoviesError('Server Failure'),
+      TopRatedMoviesLoading(),
+      const TopRatedMoviesError('Server Failure'),
     ],
     verify: (bloc) {
       verify(mockGetTopRatedMovies.execute());
