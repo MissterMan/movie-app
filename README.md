@@ -1,3 +1,6 @@
+Final Submission for Dicoding Academy
+
+
 [![Codemagic build status](https://api.codemagic.io/apps/637393348067d0f13f5db6be/637393348067d0f13f5db6bd/status_badge.svg)](https://codemagic.io/apps/637393348067d0f13f5db6be/637393348067d0f13f5db6bd/latest_build)
 
 # Firebase Crashlytics
